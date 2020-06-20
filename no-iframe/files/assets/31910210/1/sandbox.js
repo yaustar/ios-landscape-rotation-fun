@@ -3,13 +3,7 @@ Sandbox.attributes.add('widthTextEntity', {type: 'entity'});
 Sandbox.attributes.add('heightTextEntity', {type: 'entity'});
 
 // initialize code called once per entity
-Sandbox.prototype.initialize = function() {
-    this.app.once('postrender', function() {
-        document.getElementById('application-canvas').style.position = 'fixed';
-        document.body.style.minHeight = '-webkit-fill-available';
-        document.documentElement.style.height = '-webkit-fill-available';
-    });
-    
+Sandbox.prototype.initialize = function() {    
     this.entity.element.on('touchstart', function(e) {
         this.app.graphicsDevice.fullscreen = true;
     }, this);
