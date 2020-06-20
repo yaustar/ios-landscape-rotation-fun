@@ -1,6 +1,7 @@
 html {
     height: 100vh;
     background-color: #1d292c;
+    height: -webkit-fill-available;
 }
 body {
     margin: 0;
@@ -11,6 +12,7 @@ body {
     font-family: Helvetica, arial, sans-serif;
     position: relative;
     width: 100%;
+    height: -webkit-fill-available;
 }
 
 #application-canvas {
