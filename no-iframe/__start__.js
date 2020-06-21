@@ -70,9 +70,9 @@
             }
         }
 
-        // setTimeout(function () {
-        //     window.scroll(0, -100000);
-        // }, 500);
+        setTimeout(function () {
+            window.scroll(0, -100000);
+        }, 500);
     };
 
     var displayError = function (html) {
