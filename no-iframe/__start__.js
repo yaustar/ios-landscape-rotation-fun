@@ -10,7 +10,9 @@
         // canvas.style.visibility = 'hidden';
 
         // Disable I-bar cursor on click+drag
-        canvas.onselectstart = function () { return false; };
+        canvas.onselectstart = function () {
+            return false;
+        };
 
         document.body.appendChild(canvas);
 
@@ -39,7 +41,7 @@
         }
 
         // css media query for aspect ratio changes
-        var css  = "@media screen and (min-aspect-ratio: " + width + "/" + height + ") {";
+        var css = "@media screen and (min-aspect-ratio: " + width + "/" + height + ") {";
         css += "    #application-canvas.fill-mode-KEEP_ASPECT {";
         css += "        width: auto;";
         css += "        height: 100%;";
@@ -67,12 +69,16 @@
                 canvas.style.marginTop = '';
             }
         }
+
+        setTimeout(function () {
+            window.scroll(0, -100000);
+        }, 500);
     };
 
     var displayError = function (html) {
         var div = document.createElement('div');
 
-        div.innerHTML  = [
+        div.innerHTML = [
             '<table style="background-color: #8CE; width: 100%; height: 100%;">',
             '  <tr>',
             '      <td align="center">',
@@ -105,10 +111,10 @@
     } catch (e) {
         if (e instanceof pc.UnsupportedBrowserError) {
             displayError('This page requires a browser that supports WebGL.<br/>' +
-                    '<a href="http://get.webgl.org">Click here to find out more.</a>');
+                '<a href="http://get.webgl.org">Click here to find out more.</a>');
         } else if (e instanceof pc.ContextCreationError) {
             displayError("It doesn't appear your computer can support WebGL.<br/>" +
-                    '<a href="http://get.webgl.org/troubleshooting/">Click here for more information.</a>');
+                '<a href="http://get.webgl.org/troubleshooting/">Click here for more information.</a>');
         } else {
             displayError('Could not initialize application. Error: ' + e);
         }

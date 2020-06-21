@@ -1,8 +1,6 @@
 html {
-    /* Oh this feels so hacky. Hides the address bar on iOS when in landscape */
-    height: 101vh;
+    height: 100%;
     background-color: #1d292c;
-    overflow: hidden;
 }
 body {
     margin: 0;
@@ -13,6 +11,8 @@ body {
     font-family: Helvetica, arial, sans-serif;
     position: relative;
     width: 100%;
+
+    -webkit-tap-highlight-color: transparent;
 }
 
 #application-canvas {
